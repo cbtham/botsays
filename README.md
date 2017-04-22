@@ -1,5 +1,5 @@
 <a name="HOLTitle"></a>
-# Building Intelligent Bots with the Microsoft Bot Framework #
+# Building a QnA Chat Bot #
 
 ---
 
@@ -185,7 +185,7 @@ In this exercise, you will use the QnA Maker portal to edit the knowledge base t
 
     _Opening the Knowledge Base page_
 
-1. Replace "hello" in the Answer column with "Welcome to the QnA Factbot!" Then click **Save and retrain** to save the change. 
+1. Replace "hello" in the Answer column with "Welcome to Question Bot!" Then click **Save and retrain** to save the change. 
  
     ![Updating a response](Images/qna-update-default-answer.png)
 
@@ -216,17 +216,17 @@ You can enter questions and answers into a QnA Maker knowledge base manually, or
 
     _Opening the Settings page_
 
-1. Paste the following URL into the **URLs** box:
+1. Download this pdf file and upload it to QnA Maker:
 
 	```
-	https://traininglabservices.azurewebsites.net/help/faqs.html
+	https://1drv.ms/b/s!AhEFaxXTC-8ej95-gRvsElfIEx2U2Q
 	```
 
-1. Click **Save and retrain** to populate the knowledge base with questions and answers from the Web site whose URL you provided.
+1. Click **Save and retrain** to populate the knowledge base with questions and answers.
  
-    ![Importing questions and answers from a URL](Images/qna-add-faq-url.png)
+    ![](Images/qna-add-faq-url.pn)
 
-    _Importing questions and answers from a URL_
+    
 
 1. Click **Knowledge Base** and confirm that six new questions and answers were added. Then click **Save and retrain** to save the changes.
 
@@ -708,5 +708,3 @@ In this hands-on lab you learned how to:
 There is much more that you can do to leverage the power of the Microsoft Bot Framework by incorporating [dialogs](http://aihelpwebsite.com/Blog/EntryId/9/Introduction-To-Using-Dialogs-With-The-Microsoft-Bot-Framework), [FormFlow](https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/07/14/building-a-microsoft-bot-using-microsoft-bot-framework-using-formflow/), and [Microsoft Language Understanding and Intelligence Services (LUIS)](https://docs.botframework.com/en-us/node/builder/guides/understanding-natural-language/). With these and other features, you can build sophisticated bots that respond to users' queries and commands and interact in a fluid, conversational, and non-linear manner. For more information, see https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/04/05/what-is-microsoft-bot-framework-overview/.
 
 ----
-
-Copyright 2016 Microsoft Corporation. All rights reserved. Except where otherwise noted, these materials are licensed under the terms of the MIT License. You may use them according to the license as is most appropriate for your project. The terms of this license can be found at https://opensource.org/licenses/MIT.
