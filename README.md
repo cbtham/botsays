@@ -6,7 +6,7 @@
 <a name="Overview"></a>
 ## Overview  ##
 
-Software bots are everywhere. You probably interact with them every day without realizing it. Bots, especially chat and messenger bots, are changing the way we interact with businesses, communities, and even each other. Thanks to light-speed advances in artificial intelligence (AI) and the ready availability of AI services, bots are not only becoming more advanced and personalized, but also more accessible to developers. 
+Software bots are everywhere. You probably interact with them every day without realizing it. Bots, especially chat and messenger bots, are changing the way we interact with businesses, communities, and even each other. Thanks to light-speed advances in artificial intelligence (AI) and the ready availability of AI services, bots are not only becoming more advanced and personalized, but also more accessible to developers.
 
 Regardless of the target language or platform, developers building bots face the same challenges. Bots must be able process input and output intelligently. Bots need to be responsive, scalable, and extensible. They need to work cross-platform, and they need to interact with users in a conversational manner and in the language the user chooses.
 
@@ -28,12 +28,12 @@ In this hands-on lab, you will learn how to:
 
 The following are required to complete this hands-on lab:
 
-- An active Microsoft Azure subscription. If you don't have one, [sign up for a free trial](http://aka.ms/WATK-FreeTrial).
+- Microsoft Azure subscription. If you don't have one, [sign up for a free trial](http://aka.ms/vsdevtham).
 - [Visual Studio Code](http://code.visualstudio.com) 
 - [Git Client](https://git-scm.com/downloads)
 - [Node.js](https://nodejs.org)
 - [Microsoft Bot Framework Emulator](https://emulator.botframework.com/)
-- [Skype](https://www.skype.com/en/download-skype/skype-for-computer/)
+- [Skype](https://www.skype.com/en/download-skype/skype-for-computer/) (Optional)
 
 ---
 
@@ -65,7 +65,7 @@ The first step in creating a bot is to provide a location for the bot to be host
 
     _Creating a new Azure Bot Service_
   
-1. Enter a name such as "qnafactbot" (without quotation marks) into the **App name** box. *This name must be unique within Azure, so make sure a green check mark appears next to it.* Make sure **Create new** is selected under **Resource Group** and enter the resource-group name "BotsResourceGroup" (again, without quotation marks). Then select the location nearest you and click **Create**. 
+1. Enter a name of your choice such as "qnafactbot" (without quotation marks) into the **App name** box. *This name must be unique within Azure, so make sure a green check mark appears next to it.* Make sure **Create new** is selected under **Resource Group** and enter the resource-group name "BotsResourceGroup" (again, without quotation marks). Then select the location nearest you and click **Create**. 
 
     ![Configuring a new Azure Bot Service](Images/portal-create-new-bot-service.png)
 
@@ -223,48 +223,14 @@ You can enter questions and answers into a QnA Maker knowledge base manually, or
 	```
 
 1. Click **Save and retrain** to populate the knowledge base with questions and answers.
- 
-    ![](Images/qna-add-faq-url.pn)
-
-    
 
 1. Click **Knowledge Base** and confirm that six new questions and answers were added. Then click **Save and retrain** to save the changes.
 
-    ![The updated knowledge base](Images/qna-updated-kb-01.png)
-
-    _The updated knowledge base_
-
-1. Click **Test** to return to the Test page. Type "What's the largest city in the world?" into the box at the bottom of the chat window and press **Enter**. Confirm that the bot responds as shown below.
- 
-    ![Testing the updated knowledge base](Images/qna-test-largest-city.png)
-
-    _Testing the updated knowledge base_
-
-1. The knowledge base only contains a few questions and answers, but can easily be updated to include more. You can even import questions and answers stored in text files on your computer. To demonstrate, click **Replace Knowledge Base** in the upper-left corner of the portal.
- 
-    ![Replacing the knowledge base](Images/qna-click-replace-kb.png)
-
-    _Replacing the knowledge base_
-
-1. Browse to the "Resources" folder included with this lab and select the text file named **Final QnA.txt**. Click **OK** when prompted to confirm that importing this file will overwrite existing questions and answers.
- 
-1. Click **Knowledge Base** and confirm that 14 new questions and answers appear in the knowledge base. (The six you imported from the URL are still there, despite the fact that you were warned that they would be overwritten.) Then click **Save and retrain** to save the changes.
-
-    ![The updated knowledge base](Images/qna-updated-kb-02.png)
-
-    _The updated knowledge base_
-
-1. Click **Test** to return to the Test page. Type "What book has sold the most copies?" into the box at the bottom of the chat window and press **Enter**. Confirm that the bot responds as shown below. 
- 
-    ![Chatting with the bot](Images/qna-test-book.png)
-
-    _Chatting with the bot_
-
-1. The knowledge base now contains 20 questions and answers, but an invalid character is present in the answer in row 7. To remove the character, click **Knowledge Base** to return to the Knowledge Base page. Locate the invalid character in row 7 between the words "most" and "Emmys," and replace it with a space character. Then click **Save and retrain**.
+1. The knowledge base now contains a healthy amount of questions and answers, but an invalid character is present in the answer. To remove the character, click **Knowledge Base** to return to the Knowledge Base page. Locate the invalid character and replace it with the right version. Then click **Save and retrain**.
  
     ![Editing answer #7](Images/qna-invalid-char.png)
 
-    _Editing answer #7_
+    _example of edit_
 
 1. Click **Publish** to publish the changes to the knowledge base.
  
@@ -349,7 +315,7 @@ When you deployed a Bot Service in [Exercise 1](#Exercise1), an Azure Web App wa
 
     _Selecting the "messages" folder_  
 
-1. Click the **Git** button in the View Bar on the left side of Visual Studio Code, and then click **Initialize Git Repository**. This will initialize a local Git repository for the project.
+1. Click the **Git** button in the View Bar on the left side of Visual Studio Code, and then click **Initialize Git Repository**. This will initialize a local Git repository for the project. For newer version of Visual Studio Code, click on the no bug icon. Notice the small tiny icon at the top left pane. That is the initialize git icon. Click on it.
 
     ![Initializing a local Git repository](Images/vs-init-git-repo.png)
 
@@ -361,10 +327,10 @@ When you deployed a Bot Service in [Exercise 1](#Exercise1), an Azure Web App wa
 
     _Committing changes to the local Git repository_  
 
-1. Use Visual Studio Code's **View -> Integrated Terminal** command to open an integrated terminal window. Execute the following command in the integrated terminal, replacing "BOT_APP_NAME" in two places with the name of the Bot Service you entered in [Exercise 1](#Exercise1), Step 3.
+1. Use Visual Studio Code's **View -> Integrated Terminal** command to open an integrated terminal window. Execute the following command in the integrated terminal, replacing "BOT_APP_NAME" in three places with the name of the Bot Service you entered in [Exercise 1](#Exercise1), Step 3.
 
 	```
-	git remote add qnafactbot https://BOT_APP_NAME.scm.azurewebsites.net:443/BOT_APP_NAME.git
+	git remote add BOT_APP_NAME https://BOT_APP_NAME.scm.azurewebsites.net:443/BOT_APP_NAME.git
 	```
 
 1. Select **Command Palette** from the **View** menu to open Visual Studio Code's command palette. Then type "git pub" into the command palette and select **Git: Publish** to publish the bot code to Azure. 
@@ -625,13 +591,13 @@ In this exercise, you will connect your bot to the QnA Maker knowledge base you 
 
     _Starting a new conversation in the emulator_
 
-1. Type "What's the most popular software programming language in the world?" into the box at the bottom of the emulator chat window and press **Enter**.
+1. Type "What is dengue?" into the box at the bottom of the emulator chat window and press **Enter**.
 
     ![Chatting with the bot](Images/emulator-step-02.png)
 
-    _Chatting with the bot_
+    _Chatting with the bot. It should respond to you_
 
-1. Observe that the responses are now based on the QnA knowledge base. Ask the bot additional questions and see how it responds. For example, ask it what is the best-selling multiplatform game of all time, or who won the Super Bowl.
+1. Observe that the responses are now based on the QnA knowledge base. Ask the bot additional questions and see how it responds. For example, ask it what is the symptoms of dengue.
 
 1. Click the **Stop** button in Visual Studio Code's debugging toolbar to end the debugging session. Then select **View  -> Command Palette** to open the command palette, type "Git Sy," and select **Git: Sync**.
 
@@ -692,7 +658,7 @@ Once deployed, bots can be connected to channels such as Skype, Slack, Microsoft
 
     _Chatting with the bot in Skype_
 
-You now have a fully functional bot created with the Microsoft Bot Framework, infused with intellgience with Microsoft QnA Maker, and available for anyone in the world to interact with. Feel free to plug your bot into other channels and test it in different scenarios. And if you would like to make the bot smarter, consider expanding the QnA knowledge base with additional questions and answers. For example, you could use the [online FAQ](https://docs.botframework.com/en-us/faq/) for the Bot Framework to train the bot to answer questions about the framework itself.
+You now have a fully functional bot created with the Microsoft Bot Framework, infused with intelligence with Microsoft QnA Maker, and available for anyone in the world to interact with. Feel free to plug your bot into other channels and test it in different scenarios. For example for Facebook Messenger. And if you would like to make the bot smarter, consider expanding the QnA knowledge base with additional questions and answers. For example, you could use the [online FAQ](https://docs.botframework.com/en-us/faq/) for the Bot Framework to train the bot to answer questions about the framework itself.
 
 <a name="Summary"></a>
 ## Summary ##
